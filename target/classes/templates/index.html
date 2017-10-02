@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:th="http://www.thymeleaf.org"
+	xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+	layout:decorator="layouts/layout">
+<body>
+	<div layout:fragment="content">
+		<!-- Main jumbotron for a primary marketing message or call to action -->
+		<div class="jumbotron">
+			<div class="container">
+				<h1>Spring Boot Test Application</h1>
+				<p>This is a simple spring boot test. You can create/edit/delete posts.</p>
+				<p>
+					<a class="btn btn-primary btn-lg" th:href="@{/posts/new}" role="button">Create New Post &raquo;</a>
+				</p>
+			</div>
+		</div>
+
+		<div class="container">
+			<!-- Example row of columns -->
+			<div class="row">
+				<div class="col-md-4">
+					<h2 th:text="${posts[0].getTitle()}"></h2>
+					<p th:text="${#strings.abbreviate(posts[0].getMessage(),50)}"></p>
+					<p>
+						<a class="btn btn-default" th:with="postid=${posts[0].getPostId()}" th:href="@{/posts/} + ${postid}" role="button">View details
+							&raquo;</a>
+					</p>
+				</div>
+				<div class="col-md-4">
+					<h2 th:text="${posts[1].getTitle()}"></h2>
+					<p th:text="${#strings.abbreviate(posts[1].getMessage(),50)}"></p>
+					<p>
+						<a class="btn btn-default" th:with="postid=${posts[1].getPostId()}" th:href="@{/posts/} + ${postid}" role="button">View details
+							&raquo;</a>
+					</p>
+				</div><div class="col-md-4">
+					<h2 th:text="${posts[2].getTitle()}"></h2>
+					<p th:text="${#strings.abbreviate(posts[2].getMessage(),50)}"></p>
+					<p>
+						<a class="btn btn-default" th:with="postid=${posts[2].getPostId()}" th:href="@{/posts/} + ${postid}" role="button">View details
+							&raquo;</a>
+					</p>
+				</div>
+			</div>
+		</div>
+	</div>
+</body>
+</html>

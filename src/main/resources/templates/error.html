@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:th="http://www.thymeleaf.org"
+	xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+	layout:decorator="layouts/layout">
+<body>
+	<div layout:fragment="content">
+		<div class="jumbotron alert-danger">
+			<div class="container">
+				<h1>Error!</h1>
+				<h2>Something went wrong</h2>
+				<h3 th:text="${message}">Testing</h3>
+			</div>
+		</div>
+	</div>
+</body>
+</html>
